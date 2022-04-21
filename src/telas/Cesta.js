@@ -58,7 +58,7 @@ const estilos = StyleSheet.create({
     fontSize: 26,
     //largura da linha em q vai ficar o texto
     lineHeight: 42,
-    fontWeight: "bold",
+    fontFamily: "MontSerratBold",
   },
   fazenda: {
     //mudar a posicao dos componentes dentro da view para linha, um ao lado do outro
@@ -73,7 +73,8 @@ const estilos = StyleSheet.create({
     fontSize: 16,
     lineHeight: 26,
     marginLeft: 12,
-    marginTop: 2
+    marginTop: 2,
+    fontFamily: "MontSerratRegular",
   },
   descricao: {
     color: "#A3A3A3",
