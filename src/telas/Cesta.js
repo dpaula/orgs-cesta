@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, Image, Dimensions, Text, View } from "react-native";
 
+import TextoFontMontSerrat from "../componentes/TextoFontMontSerrat";
+
 import topo from "../../assets/topo.png";
 import logo from "../../assets/logo.png";
 
@@ -10,21 +12,29 @@ export default function Cesta() {
   return (
     <>
       <Image source={topo} style={estilos.topo} />
-      <Text style={estilos.titulo}>Detalhe da Cesta</Text>
+      <TextoFontMontSerrat style={estilos.titulo}>
+        Detalhe da Cesta
+      </TextoFontMontSerrat>
 
       <View style={estilos.cesta}>
-        <Text style={estilos.nomeCesta}>Cesta de Verduras</Text>
+        <TextoFontMontSerrat style={estilos.nomeCesta}>
+          Cesta de Verduras
+        </TextoFontMontSerrat>
 
         <View style={estilos.fazenda}>
           <Image source={logo} style={estilos.imagemFazenda} />
-          <Text style={estilos.nomeFazenda}>Blu Verde</Text>
+          <TextoFontMontSerrat style={estilos.nomeFazenda}>
+            Blu Verde
+          </TextoFontMontSerrat>
         </View>
 
-        <Text style={estilos.descricao}>
+        <TextoFontMontSerrat style={estilos.descricao}>
           Uma cesta com produtos selecionados cuidadozamente da fazenda direto
           para sua cozinha
-        </Text>
-        <Text style={estilos.preco}>R$ 40,00</Text>
+        </TextoFontMontSerrat>
+        <TextoFontMontSerrat style={estilos.preco}>
+          R$ 40,00
+        </TextoFontMontSerrat>
       </View>
     </>
   );
@@ -58,7 +68,7 @@ const estilos = StyleSheet.create({
     fontSize: 26,
     //largura da linha em q vai ficar o texto
     lineHeight: 42,
-    fontFamily: "MontSerratBold",
+    fontWeight: "bold",
   },
   fazenda: {
     //mudar a posicao dos componentes dentro da view para linha, um ao lado do outro
@@ -74,7 +84,6 @@ const estilos = StyleSheet.create({
     lineHeight: 26,
     marginLeft: 12,
     marginTop: 2,
-    fontFamily: "MontSerratRegular",
   },
   descricao: {
     color: "#A3A3A3",
