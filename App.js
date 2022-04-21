@@ -5,6 +5,8 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
+import AppLoading from "expo-app-loading";
+
 //aponta para pasta Cesta, onde tem o index.js
 import Cesta from "./src/telas/Cesta";
 
@@ -20,7 +22,7 @@ export default function App() {
 
   //se as fontes nao estiverem carregadas, mostra um loading
   if (!fonteCarregada) {
-    return <View />;
+    return <AppLoading />;
   }
 
   //se as fontes estiverem carregadas, mostra o app
