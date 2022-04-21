@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, Image, View, TouchableOpacity } from "react-native";
 
 import TextoFontMontSerrat from "../../../componentes/TextoFontMontSerrat";
 
@@ -9,6 +9,7 @@ export default function Detalhes({
   nomeFazenda,
   descricao,
   preco,
+  botao
 }) {
   return (
     <>
@@ -27,6 +28,12 @@ export default function Detalhes({
         {descricao}
       </TextoFontMontSerrat>
       <TextoFontMontSerrat style={estilos.preco}>{preco}</TextoFontMontSerrat>
+
+      <TouchableOpacity style={estilos.botao}>
+        <TextoFontMontSerrat style={estilos.textoBotao}>
+          {botao}
+        </TextoFontMontSerrat>
+        </TouchableOpacity>
     </>
   );
 }
@@ -65,5 +72,20 @@ const estilos = StyleSheet.create({
     fontSize: 26,
     lineHeight: 42,
     marginTop: 8,
+  },
+  botao: {
+    marginTop: 16,
+    backgroundColor: "#2A9F85",
+    //margem em cima e embaixo
+    paddingVertical: 16,
+    //arrendondar os cantos
+    borderRadius: 6,
+  },
+  textoBotao: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    lineHeight: 26,
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
