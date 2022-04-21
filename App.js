@@ -5,10 +5,11 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 
+//aponta para pasta Cesta, onde tem o index.js
 import Cesta from "./src/telas/Cesta";
 
 export default function App() {
-  
+
   //carrega as fontes do google
   const [fonteCarregada] = useFonts({
     "MontSerratRegular": Montserrat_400Regular,
