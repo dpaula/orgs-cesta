@@ -10,13 +10,11 @@ import TextoFontMontSerrat from "../../../componentes/TextoFontMontSerrat";
 //pegando o tamanho da tela (largura)
 const width = Dimensions.get("screen").width;
 
-export default function Topo() {
+export default function Topo({ titulo }) {
   return (
     <>
       <Image source={topo} style={estilos.topo} />
-      <TextoFontMontSerrat style={estilos.titulo}>
-        Detalhe da Cesta
-      </TextoFontMontSerrat>
+      <TextoFontMontSerrat style={estilos.titulo}>{titulo}</TextoFontMontSerrat>
     </>
   );
 }

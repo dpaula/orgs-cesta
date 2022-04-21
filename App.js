@@ -8,6 +8,8 @@ import {
 //aponta para pasta Cesta, onde tem o index.js
 import Cesta from "./src/telas/Cesta";
 
+import mockCesta from "./src/mocks/cesta";
+
 export default function App() {
 
   //carrega as fontes do google
@@ -25,7 +27,7 @@ export default function App() {
   return (
     <SafeAreaView>
       <StatusBar />
-      <Cesta />
+      <Cesta {...mockCesta}/>
     </SafeAreaView>
   );
 }

@@ -2,27 +2,31 @@ import React from "react";
 import { StyleSheet, Image, View } from "react-native";
 
 import TextoFontMontSerrat from "../../../componentes/TextoFontMontSerrat";
-import logo from "../../../../assets/logo.png";
 
-export default function Detalhes() {
+export default function Detalhes({
+  logoFazenda,
+  nomeCesta,
+  nomeFazenda,
+  descricao,
+  preco,
+}) {
   return (
     <>
       <TextoFontMontSerrat style={estilos.nomeCesta}>
-        Cesta de Verduras
+        {nomeCesta}
       </TextoFontMontSerrat>
 
       <View style={estilos.fazenda}>
-        <Image source={logo} style={estilos.imagemFazenda} />
+        <Image source={logoFazenda} style={estilos.imagemFazenda} />
         <TextoFontMontSerrat style={estilos.nomeFazenda}>
-          Blu Verde
+          {nomeFazenda}
         </TextoFontMontSerrat>
       </View>
 
       <TextoFontMontSerrat style={estilos.descricao}>
-        Uma cesta com produtos selecionados cuidadozamente da fazenda direto
-        para sua cozinha
+        {descricao}
       </TextoFontMontSerrat>
-      <TextoFontMontSerrat style={estilos.preco}>R$ 40,00</TextoFontMontSerrat>
+      <TextoFontMontSerrat style={estilos.preco}>{preco}</TextoFontMontSerrat>
     </>
   );
 }
