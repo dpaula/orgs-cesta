@@ -13,11 +13,10 @@ import Cesta from "./src/telas/Cesta";
 import mockCesta from "./src/mocks/cesta";
 
 export default function App() {
-
   //carrega as fontes do google
   const [fonteCarregada] = useFonts({
-    "MontSerratRegular": Montserrat_400Regular,
-    "MontSerratBold": Montserrat_700Bold
+    MontSerratRegular: Montserrat_400Regular,
+    MontSerratBold: Montserrat_700Bold,
   });
 
   //se as fontes nao estiverem carregadas, mostra um loading
@@ -27,9 +26,11 @@ export default function App() {
 
   //se as fontes estiverem carregadas, mostra o app
   return (
-    <SafeAreaView>
+    //SafeAreaView é uma view que faz com que o statusbar nao fique sobreposto ao conteudo
+    //stilo com flex 1, para que o conteudo fique no centro, do tamnho da tela
+    <SafeAreaView style={{ flex: 1 }}>
       <StatusBar />
-      <Cesta {...mockCesta}/>
+      <Cesta {...mockCesta} />
     </SafeAreaView>
   );
 }
