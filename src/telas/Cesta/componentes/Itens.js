@@ -1,21 +1,26 @@
 import React from "react";
 
-import { Image, View, StyleSheet } from "react-native";
+import { Image, View, StyleSheet, FlatList } from "react-native";
 
 import TextoFontMontSerrat from "../../../componentes/TextoFontMontSerrat";
 
 export default function Itens({ titulo, lista }) {
+  const renderItem = ({ item: { nome, icone } }) => (
+    <View key={nome} style={estilos.item}>
+      <Image source={icone} style={estilos.icone} />
+      <TextoFontMontSerrat style={estilos.nome}>{nome}</TextoFontMontSerrat>
+    </View>
+  );
+
   return (
     <>
       <TextoFontMontSerrat style={estilos.titulo}>{titulo}</TextoFontMontSerrat>
-      {lista.map(({ nome, icone }) => {
-        return (
-          <View key={nome} style={estilos.item}>
-            <Image source={icone} style={estilos.icone} />
-            <TextoFontMontSerrat style={estilos.nome}>{nome}</TextoFontMontSerrat>
-          </View>
-        );
-      })}
+
+      <FlatList
+        data={lista}
+        renderItem={renderItem}
+        keyExtractor={({ nome }) => nome}
+      />
     </>
   );
 }
